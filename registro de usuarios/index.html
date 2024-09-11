@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Validar el formulario al intentar enviarlo
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').addEventListener('submit', function(event) {
+                let identificacion = document.getElementById('identificacion').value;
+                let apellidoUsuario = document.getElementById('apellidoUsuario').value;
+                let nombreUsuario = document.getElementById('nombreUsuario').value;
+                let direccionUsuario = document.getElementById('direccionUsuario').value;
+                let correoUsuario = document.getElementById('correoUsuario').value;
+                let fechaNacimientoUsuario = document.getElementById('fechaNacimientoUsuario').value;
+                let localidad = document.getElementById('localidad').value;
+
+                // Validar que todos los campos estén completos
+                if (!identificacion || !apellidoUsuario || !nombreUsuario || !direccionUsuario || !correoUsuario || !fechaNacimientoUsuario || !localidad) {
+                    alert('Por favor, complete todos los campos.');
+                    event.preventDefault(); // Detener el envío si falta un campo
+                } else {
+                    alert('Formulario enviado con éxito.');
+                }
+            });
+
+            // Mostrar contador de caracteres en el campo "Identificación"
+            document.getElementById('identificacion').addEventListener('input', function() {
+                let maxLength = 10; // Máximo de caracteres permitidos
+                let currentLength = this.value.length;
+                let remainingChars = maxLength - currentLength;
+
+                if (remainingChars >= 0) {
+                    document.getElementById('char-count').textContent = 'Caracteres restantes: ' + remainingChars;
+                } else {
+                    document.getElementById('char-count').textContent = 'Máximo alcanzado';
+                    this.value = this.value.slice(0, maxLength); // Limitar a 10 caracteres
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content-wrapper">
+        <div class="container">
+            <h1>Registro de Usuarios</h1>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="identificacion">Identificación:</label>
+                    <input type="text" id="identificacion" name="identificacion" maxlength="10" required>
+                    <small id="char-count">Caracteres restantes: 10</small> <!-- Contador de caracteres -->
+                </div>
+                <div class="form-group">
+                    <label for="apellidoUsuario">Apellidos:</label>
+                    <input type="text" id="apellidoUsuario" name="apellidoUsuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombres:</label>
+                    <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccionUsuario">Dirección:</label>
+                    <input type="text" id="direccionUsuario" name="direccionUsuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="correoUsuario">Correo Electrónico:</label>
+                    <input type="email" id="correoUsuario" name="correoUsuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaNacimientoUsuario">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimientoUsuario" name="fechaNacimientoUsuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="localidad">Ciudad:</label>
+                    <input type="text" id="localidad" name="localidad" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Registrar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Recuadro derecho -->
+        <div class="info-box">
+            <div class="logo">
+                <!-- Espacio para el logo -->
+                <img src="adidas.png" alt="adidas" class="logo-img">
+            </div>
+            <h2>ADIDAS</h2>
+            <p><strong>IMPOSSIBLE IS NOTHING</strong></p>
+            <p>Hecho por: <strong>Miguel Angel Cedeño delgado</strong></p>
+            <p>Docente: <strong>Ing. Patricia Quiroz</strong></p>
+        </div>
+    </div>
+</body>
+</html>
