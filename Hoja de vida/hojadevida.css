@@ -1,0 +1,94 @@
+/* Reset de márgenes y rellenos, asegura que todo tenga el mismo box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    margin: 20px auto; /* Agregué un pequeño margen superior */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Añadí bordes redondeados para un diseño más moderno */
+}
+
+/* Información personal */
+.personal-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Imagen de perfil */
+.personal-info img {
+    border-radius: 50%; /* Imagen redonda */
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Títulos secundarios */
+h2 {
+    font-size: 2em;
+    margin-top: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 5px;
+}
+
+/* Texto de párrafos y elementos de lista */
+p, li {
+    font-size: 1.2em;
+    margin-bottom: 10px; /* Añadí margen inferior para separación */
+}
+
+/* Secciones generales */
+.section {
+    margin-bottom: 20px;
+}
+
+/* Tabla de referencias */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Encabezado de la tabla */
+thead {
+    background-color: #2980b9;
+    color: white;
+}
+
+/* Celdas de la tabla */
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Alternancia de color en las filas */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Efecto hover en filas */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
