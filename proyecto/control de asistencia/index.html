@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Asistencia - Talento Humano ULEAM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Control de Asistencia - Talento Humano ULEAM</h1>
+</header>
+
+<div class="container">
+    <form id="attendanceForm">
+        <h2>Registro de Asistencia</h2>
+
+        <label for="name">Nombre Completo:</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error" id="nameError"></div>
+
+        <label for="id">Cédula:</label>
+        <input type="text" id="id" name="id" required maxlength="10" minlength="10">
+        <div class="error" id="idError"></div>
+
+        <label for="entryTime">Hora de Entrada:</label>
+        <input type="time" id="entryTime" name="entryTime" required>
+        <div class="error" id="entryTimeError"></div>
+
+        <label for="exitTime">Hora de Salida:</label>
+        <input type="time" id="exitTime" name="exitTime">
+        <div class="error" id="exitTimeError"></div>
+
+        <input type="submit" value="Registrar Asistencia">
+    </form>
+
+    <section id="attendanceTableSection">
+        <h2>Asistencias Diarias</h2>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cédula</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Salida</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="statisticsSection">
+        <h2>Estadísticas</h2>
+        <p>Asistencias Totales: <span id="totalAttendance">0</span></p>
+        <p>Ausencias: <span id="totalAbsences">0</span></p>
+        <p>Tardanzas: <span id="totalLates">0</span></p>
+        <p>Cumplimiento Horario: <span id="onTimePercentage">0</span>%</p>
+    </section>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
